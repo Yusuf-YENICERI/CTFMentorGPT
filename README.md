@@ -2,7 +2,13 @@
 
 # CTFMentorGPT 💻 🚩
 
+![bot](https://github.com/Yusuf-YENICERI/CTFMentorGPT/assets/38917909/a8a19ed6-a1a4-40b0-a897-ec1b451672ef)
+
 Welcome to CTFMentorGPT, your ultimate companion in the world of Capture The Flag (CTF) challenges! 🚀
+
+
+
+
 
 ## What is CTFMentorGPT?
 
