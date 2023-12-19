@@ -210,7 +210,7 @@ const useAuth = create<AuthType>()(
       token: localStorage.getItem("token") || "",
       apikey: localStorage.getItem("apikey") || "",
       user: {
-        name: "Your name?",
+        name: "Hacker",
         email: "",
         avatar: "/imgs/default-avatar.jpg",
       },
@@ -260,7 +260,7 @@ const useSettings = create<SettingsType>()(
         modalsList: modalsList,
         systemMessage: "",
         useSystemMessageForAllChats: false,
-        selectedModal: "gpt-3.5-turbo",
+        selectedModal: "gpt-4-1106-preview",
       },
       isSystemMessageModalVisible: false,
       isModalVisible: false,

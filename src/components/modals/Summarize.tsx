@@ -27,12 +27,21 @@ export default function Summarize({ setSummarizeTextOpen }: any) {
     e.preventDefault();
     if (saveClicked) {
       setShowWait(true);
-      let summarized_text = await summarize_text(
-        userTextToSummarize,
-        selectedModal
-      );
-      setTextToSummarize(summarized_text || "");
-      console.log(summarized_text);
+
+      try {
+        let summarized_text = await summarize_text(
+          userTextToSummarize,
+          selectedModal
+        );
+        setTextToSummarize(summarized_text || "");
+        console.log(summarized_text);
+        alert(
+          "Text successfully processed. Current model is gpt-4-turbo. It's good when it comes to process text, but you may want to change to gpt-3.5-turbo while asking. It will decrease the cost."
+        );
+      } catch (error) {
+        alert("An error occurred");
+      }
+
       setShowWait(false);
     }
     setSummarizeTextOpen(false);
@@ -97,7 +106,7 @@ export default function Summarize({ setSummarizeTextOpen }: any) {
         </div>
         <div className={showWait ? "mt-4 text-sm font-medium" : "hidden"}>
           Please wait, we are processing your writeup. It might take a while
-          (max 30 seconds) ..
+          (max 1 min) ..
         </div>
       </form>
     </motion.div>

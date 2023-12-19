@@ -1,6 +1,7 @@
 import { IonIcon } from "@ionic/react";
 import { sparkles } from "ionicons/icons";
 import Avatar from "../Avatar/Avatar";
+import { logoGithub } from "ionicons/icons";
 export default function GptIntro() {
   return (
     <>
@@ -39,6 +40,18 @@ export default function GptIntro() {
         <h6 className="text-xl font-bold mt-5 text-center text-gray-500">
           # Free Palestine && Terrorist Israel
         </h6>
+        <div
+          className="flex flex-row items-center mt-5"
+          onClick={() => {
+            window.location.href =
+              "https://github.com/Yusuf-YENICERI/CTFMentorGPT";
+          }}
+        >
+          <h6 className="text-lg font-bold text-center text-gray-500  mr-2">
+            GitHub
+          </h6>
+          <IonIcon icon={logoGithub} size="large" color="white" />
+        </div>
       </div>
     </>
   );
