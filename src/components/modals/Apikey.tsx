@@ -10,13 +10,18 @@ const varinats = {
   exit: { opacity: 0, scale: 0.8, transition: { duration: 0.15 } },
 };
 
-export default function Apikey() {
+export default function Apikey({ setApiKeyOpen }: { setApiKeyOpen: any }) {
   const [userapikey, setUserApikey] = useState("");
   const { setApiKey } = useAuth();
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    setApiKey(userapikey);
+    try {
+      e.preventDefault();
+      setApiKey(userapikey);
+      setApiKeyOpen(false);
+    } catch (error) {
+      alert("Can't set api key!");
+    }
   }
 
   return (
@@ -52,6 +57,14 @@ export default function Apikey() {
             className="mt-4 py-2.5   px-5 text-sm font-medium disabled:text-gray-900 focus:outline-none bg-green-500 text-white rounded-lg border border-gray-200   focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
           >
             Save
+          </button>
+          <button
+            onClick={() => {
+              setApiKeyOpen(false);
+            }}
+            className="mt-4 py-2.5   px-5 text-sm font-medium disabled:text-gray-900 focus:outline-none bg-green-500 text-white rounded-lg border border-gray-200   focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+          >
+            Cancel
           </button>
         </div>
       </form>

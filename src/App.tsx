@@ -23,6 +23,7 @@ function App() {
   const [theme] = useTheme((state) => [state.theme]);
 
   const [summarizeTextOpen, setSummarizeTextOpen] = useState(true);
+  const [apiKeyOpen, setApiKeyOpen] = useState(!Boolean(userHasApiKey));
 
   useEffect(() => {
     if (theme === "dark") {
@@ -88,8 +89,8 @@ function App() {
       <Modal visible={summarizeTextOpen}>
         <Summarize setSummarizeTextOpen={setSummarizeTextOpen} />
       </Modal>
-      <Modal visible={!Boolean(userHasApiKey)}>
-        <Apikey />
+      <Modal visible={apiKeyOpen}>
+        <Apikey setApiKeyOpen={setApiKeyOpen} />
       </Modal>
     </div>
   );

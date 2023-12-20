@@ -27,6 +27,7 @@ now what should i do? Tell him to check services. Let him figure out always.
     },
     ...messages,
   ];
+  let chunks;
   try {
     const response = await fetch(apiUrl, {
       method: `POST`,
@@ -58,7 +59,7 @@ now what should i do? Tell him to check services. Let him figure out always.
 
       let chunk = new TextDecoder("utf-8").decode(value, { stream: true });
 
-      const chunks = chunk.split("\n").filter((x: string) => x !== "");
+      chunks = chunk.split("\n").filter((x: string) => x !== "");
 
       chunks.forEach((chunk: string) => {
         if (chunk === "data: [DONE]") {
@@ -66,9 +67,13 @@ now what should i do? Tell him to check services. Let him figure out always.
         }
         if (!chunk.startsWith("data: ")) return;
         chunk = chunk.replace("data: ", "");
-        const data = JSON.parse(chunk);
-        if (data.choices[0].finish_reason === "stop") return;
-        onData(data.choices[0].delta.content);
+        try {
+          const data = JSON.parse(chunk);
+          if (data.choices[0].finish_reason === "stop") return;
+          onData(data.choices[0].delta.content);
+        } catch (error) {
+          console.log("you got error bro");
+        }
       });
     }
   } catch (error) {
