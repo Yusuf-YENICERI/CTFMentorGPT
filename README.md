@@ -1,11 +1,13 @@
-<h3 style="text-align:center;">Free Palestine && Terrorist israel</h3> 
-
+<h3 align="center">Free Palestine && Terrorist israel</h3> 
+<div align="center">
+  
 # CTFMentorGPT 💻 🚩
 
 ![bot](https://github.com/Yusuf-YENICERI/CTFMentorGPT/assets/38917909/a8a19ed6-a1a4-40b0-a897-ec1b451672ef)
 
 Welcome to CTFMentorGPT, your ultimate companion in the world of Capture The Flag (CTF) challenges! 🚀
 
+</div>
 
 
 
@@ -16,6 +18,18 @@ CTFMentorGPT is an innovative tool designed to assist you in tackling CTF challe
 Copy paste a writeup(without checking it) to CTFMentorGPT and start asking questions!
 
 Visit [CTFMentorGPT](https://ctfmentorgpt.netlify.app/) and elevate your CTF game!
+
+
+## Why should i use it?
+
+We generally stuck at some steps while solving CTF challenges. We have some choices at that moment like asking someone for help or checking out the writeup. The problem with asking someone for help is there is not always one that can answer our questions and the problem with writeup is that, we directly get the answer which prevents us to sharpen our skills. So what's the solution is to use CTFMentorGPT. We give it the writeup and it helps us with providing hints. That's what it's built for, inshaAllah.
+
+## Screenshots
+
+![1](https://github.com/Yusuf-YENICERI/CTFMentorGPT/assets/38917909/37c071de-d27e-44aa-b708-d0be50b4e444)
+![2](https://github.com/Yusuf-YENICERI/CTFMentorGPT/assets/38917909/4491a023-90ab-4cdd-83d7-842cf8afe3ba)
+
+
 
 ## Choosing the Right Engine 🚗
 
